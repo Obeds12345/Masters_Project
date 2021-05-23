@@ -1,0 +1,2 @@
+https://stackabuse.com/introduction-to-neural-networks-with-scikit-learn/
+https://www.datacamp.com/community/tutorials/convolutional-neural-networks-python

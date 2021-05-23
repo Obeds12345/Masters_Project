@@ -43,40 +43,26 @@ Y = Y.ravel()
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
 
-model = svm.SVC(kernel='linear', C = 1.0)
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)
 
-# model train
-model.fit(X_train,Y_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
 
-predicted_values = model.predict(X_test)
+from sklearn.neural_network import MLPClassifier
+model = MLPClassifier(hidden_layer_sizes=(10, 10, 10), max_iter=1000)
+model.fit(X_train, Y_train)
 
+predictions = model.predict(X_test)
 
-## Step 5: Estimate Error ####
-print("Correct Classify Instances:", metrics.accuracy_score(Y_test,predicted_values,normalize=False))
-print("Incorrect Classify Instances:", predicted_values.size - metrics.accuracy_score(Y_test,predicted_values,normalize=False))
+print("Correct Classify Instances:", metrics.accuracy_score(Y_test,predictions,normalize=False))
+print("Incorrect Classify Instances:", predictions.size - metrics.accuracy_score(Y_test,predictions,normalize=False))
 print("Accuracy Score: ", model.score(X_test,Y_test))
 print("Error: ", 1 - model.score(X_test,Y_test))
 
-# Model Precision: what percentage of positive tuples are labeled as such?
-print("Precision:",metrics.precision_score(Y_test, predicted_values))
-
-# Model Recall: what percentage of positive tuples are labelled as such?
-print("Recall:",metrics.recall_score(Y_test, predicted_values))
-
-# for item in zip(Y_test, predicted_values):
-#     print("Auctual was: ", item[0], "Predicted is: ", item[1])
 
 
-w = model.coef_[0]
-print('w', w)
-
-a = -w[0] / w[1]
-
-xx = np.linspace(0,120)
-yy = a * xx - model.intercept_[0] / w[1]
-
-h0 = plt.plot(xx, yy, 'k-', label="non weighted div")
-
-plt.scatter(X_train[:, 0], X_train[:, 1], c = Y_train)
-plt.legend()
-plt.show()
+from sklearn.metrics import classification_report, confusion_matrix
+print(confusion_matrix(Y_test,predictions))
+print(classification_report(Y_test,predictions))
