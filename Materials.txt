@@ -6,3 +6,4 @@ https://www.youtube.com/watch?v=WvoLTXIjBYU
 https://www.youtube.com/watch?v=n2MxgXtSMBw
 https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/
 https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/
+https://www.kaggle.com/franklemuchahary/basic-cnn-keras-with-cross-validation
