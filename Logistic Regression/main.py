@@ -8,10 +8,9 @@ from sklearn.metrics import mean_squared_error
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.model_selection import cross_val_score
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
-
+from sklearn.model_selection import KFold
 from sklearn.linear_model import LogisticRegression
 
 
@@ -50,6 +49,14 @@ print("Accuracy Score: ", model.score(X_test,Y_test))
 print("Error: ", 1 - model.score(X_test,Y_test))
 
 
+# model train
+from sklearn.model_selection import cross_val_score
+X = scaler.transform(X)
+# Y = scaler.transform(Y)
+cv = KFold(n_splits=10, random_state=1, shuffle=True)
+scores = cross_val_score(model, X, Y, cv=cv, scoring='accuracy', n_jobs=-1)
+print('scores :', scores, 'scores :')
+print('cross_val_score Accuracy: %.3f (%.3f)' % (np.mean(scores), np.std(scores)))
 
 # from sklearn.metrics import classification_report, confusion_matrix
 # print(confusion_matrix(Y_test,predictions))

@@ -8,7 +8,6 @@ from sklearn.metrics import mean_squared_error
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.model_selection import cross_val_score
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
@@ -63,6 +62,18 @@ print("Error: ", 1 - model.score(X_test,Y_test))
 
 
 
+
 from sklearn.metrics import classification_report, confusion_matrix
 print(confusion_matrix(Y_test,predictions))
 print(classification_report(Y_test,predictions))
+
+
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import RepeatedKFold, KFold
+X = scaler.transform(X)
+# Y = scaler.transform(Y)
+cv = KFold(n_splits=10, random_state=0, shuffle=True)
+# cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
+scores = cross_val_score(model, X, Y, cv=cv, scoring='accuracy', n_jobs=-1)
+print('scores :', scores, 'scores :')
+print('cross_val_score Accuracy: %.3f (%.3f)' % (np.mean(scores), np.std(scores)))

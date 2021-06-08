@@ -1,0 +1,8 @@
+https://towardsdatascience.com/questions-96667b06af5
+https://medium.com/swlh/a-simple-convolutional-neural-network-summary-for-binary-image-classification-with-keras-d58caf2f84a4
+https://www.youtube.com/watch?v=Y6UDeGRyNZk&list=RDCMUCTiWgVtEGSY4cuduJbMPblA&index=6
+https://www.youtube.com/watch?v=7gGxBGvSAa0&list=RDCMUCTiWgVtEGSY4cuduJbMPblA&start_radio=1&rv=7gGxBGvSAa0&t=2
+https://www.youtube.com/watch?v=WvoLTXIjBYU
+https://www.youtube.com/watch?v=n2MxgXtSMBw
+https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/
+https://machinelearningmastery.com/repeated-k-fold-cross-validation-with-python/

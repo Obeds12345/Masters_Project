@@ -47,6 +47,7 @@ model = svm.SVC(kernel='linear', C = 1.0)
 
 # model train
 model.fit(X_train,Y_train)
+scores = cross_val_score(model, X, y, cv=5)
 
 predicted_values = model.predict(X_test)
 
@@ -54,12 +55,12 @@ predicted_values = model.predict(X_test)
 ## Step 5: Estimate Error ####
 print("Correct Classify Instances:", metrics.accuracy_score(Y_test,predicted_values,normalize=False))
 print("Incorrect Classify Instances:", predicted_values.size - metrics.accuracy_score(Y_test,predicted_values,normalize=False))
+print("Training Score: ", model.score(X_train,Y_train))
 print("Accuracy Score: ", model.score(X_test,Y_test))
 print("Error: ", 1 - model.score(X_test,Y_test))
 
 # Model Precision: what percentage of positive tuples are labeled as such?
 print("Precision:",metrics.precision_score(Y_test, predicted_values))
-
 # Model Recall: what percentage of positive tuples are labelled as such?
 print("Recall:",metrics.recall_score(Y_test, predicted_values))
 
