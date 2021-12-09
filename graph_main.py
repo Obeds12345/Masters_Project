@@ -117,10 +117,13 @@ if __name__=='__main__':
     # df5 = pd.read_csv('results/custom/fold_average/ClassifierChain(KNeighborsClassifier()).csv')
     # df6 = pd.read_csv('results/custom/fold_average/ClassifierChain(RandomForestClassifier()).csv')
 
-    df7 = pd.read_csv('results/custom/fold_average/OneVsRestClassifier(GaussianNB()).csv')
-    df8 = pd.read_csv('results/custom/fold_average/OneVsRestClassifier(KNeighborsClassifier()).csv')
-    df9 = pd.read_csv('results/custom/fold_average/OneVsRestClassifier(RandomForestClassifier()).csv')
-    df10 = pd.read_csv('results/custom/fold_average/OneVsRestClassifier(SVC()).csv')
+    # df7 = pd.read_csv('results/custom/fold_average/OneVsRestClassifier(GaussianNB()).csv')
+    # df8 = pd.read_csv('results/custom/fold_average/OneVsRestClassifier(KNeighborsClassifier()).csv')
+    # df9 = pd.read_csv('results/custom/fold_average/OneVsRestClassifier(RandomForestClassifier()).csv')
+    
+    df7 = pd.read_csv('results/cnn/fold_average/CNN_FOLD_AVERAGE_0.3_2_H_L.csv')
+    df8 = pd.read_csv('results/cnn/fold_average/CNN_FOLD_AVERAGE_0.4_2_H_L.csv')
+    df9 = pd.read_csv('results/cnn/fold_average/CNN_FOLD_AVERAGE_0.5_2_H_L.csv')
     
     # df11 = pd.read_csv('results/custom/fold_average/CNN.csv')
 
@@ -130,12 +133,11 @@ if __name__=='__main__':
     classifiers = [
         # "BinaryRelevance_GaussianNB", "BinaryRelevance_KNeighborsClassifier", "BinaryRelevance_RandomForestClassifier",
         # "ClassifierChain_GaussianNB", "ClassifierChain_KNeighborsClassifier", "ClassifierChain_RandomForestClassifier",
-        "OneVsRestClassifier_GaussianNB", "OneVsRestClassifier_KNeighborsClassifier", "OneVsRestClassifier_RandomForestClassifier",
-        "SVC_GaussianNB", 
-        # "CNN", 
+        # "OneVsRestClassifier_GaussianNB", "OneVsRestClassifier_KNeighborsClassifier", "OneVsRestClassifier_RandomForestClassifier",
+        "CNN_0.3_2_H_L", "CNN_0.4_2_H_L", "CNN_0.5_2_H_L", 
         ]
     
-    dataframes = [  df7, df8, df9, df10,]
+    dataframes = [  df7, df8, df9]
     # dataframes = [df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11]
     dataframes_ = []
     for index, df in enumerate(dataframes):
@@ -152,4 +154,4 @@ if __name__=='__main__':
                    
     dfs = generateDataframe(columns, dataframes_, classifiers)
     # file_ = 
-    plotData(dfs, classifiers, "OneVsRestClassifier")
+    plotData(dfs, classifiers, "CNN 2_H_L")
