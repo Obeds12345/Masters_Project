@@ -74,11 +74,6 @@ class Classifiers:
         model.add(BatchNormalization())
         model.add(Dropout(0.5))
 
-        # model.add(Conv1D(filters=32, kernel_size=3, activation='relu'))
-        # model.add(MaxPooling1D(pool_size=1))
-        # model.add(BatchNormalization())
-        # model.add(Dropout(0.5))
-
         model.add(Flatten())
         model.add(Dense(93, activation='sigmoid'))
         print(model.summary())

@@ -38,42 +38,42 @@ if __name__=='__main__':
             'classifier': BinaryRelevance(GaussianNB()), 
             'key': 'BinaryRelevance(GaussianNB())' 
         },
-        {   
-            'classifier': BinaryRelevance(KNeighborsClassifier()), 
-            'key': 'BinaryRelevance(KNeighborsClassifier())' 
-        },   
-        {  
-            'classifier': BinaryRelevance(RandomForestClassifier(random_state=42)),
-            'key': 'BinaryRelevance(RandomForestClassifier())' 
-        },    
-        {  
-            'classifier': ClassifierChain(GaussianNB()), 
-            'key': 'ClassifierChain(GaussianNB())' 
-        },
-        {   
-            'classifier': ClassifierChain(KNeighborsClassifier()), 
-            'key': 'ClassifierChain(KNeighborsClassifier())' 
-        },       
-        {  
-            'classifier': ClassifierChain(RandomForestClassifier(random_state=42, n_estimators=100)),
-            'key': 'ClassifierChain(RandomForestClassifier())' 
-        },
-        {  
-            'classifier': OneVsRestClassifier(GaussianNB()), 
-            'key': 'OneVsRestClassifier(GaussianNB())' 
-        },
-        {  
-            'classifier': OneVsRestClassifier(SVC()),
-            'key': 'OneVsRestClassifier(SVC())' 
-        },
-        {   
-            'classifier': OneVsRestClassifier(KNeighborsClassifier()), 
-            'key': 'OneVsRestClassifier(KNeighborsClassifier())' 
-        },
-        {  
-            'classifier': OneVsRestClassifier(RandomForestClassifier(random_state=42, n_estimators=100)),
-            'key': 'OneVsRestClassifier(RandomForestClassifier())' 
-        }, 
+        # {   
+        #     'classifier': BinaryRelevance(KNeighborsClassifier()), 
+        #     'key': 'BinaryRelevance(KNeighborsClassifier())' 
+        # },   
+        # {  
+        #     'classifier': BinaryRelevance(RandomForestClassifier(random_state=42)),
+        #     'key': 'BinaryRelevance(RandomForestClassifier())' 
+        # },    
+        # {  
+        #     'classifier': ClassifierChain(GaussianNB()), 
+        #     'key': 'ClassifierChain(GaussianNB())' 
+        # },
+        # {   
+        #     'classifier': ClassifierChain(KNeighborsClassifier()), 
+        #     'key': 'ClassifierChain(KNeighborsClassifier())' 
+        # },       
+        # {  
+        #     'classifier': ClassifierChain(RandomForestClassifier(random_state=42, n_estimators=100)),
+        #     'key': 'ClassifierChain(RandomForestClassifier())' 
+        # },
+        # {  
+        #     'classifier': OneVsRestClassifier(GaussianNB()), 
+        #     'key': 'OneVsRestClassifier(GaussianNB())' 
+        # },
+        # {  
+        #     'classifier': OneVsRestClassifier(SVC()),
+        #     'key': 'OneVsRestClassifier(SVC())' 
+        # },
+        # {   
+        #     'classifier': OneVsRestClassifier(KNeighborsClassifier()), 
+        #     'key': 'OneVsRestClassifier(KNeighborsClassifier())' 
+        # },
+        # {  
+        #     'classifier': OneVsRestClassifier(RandomForestClassifier(random_state=42, n_estimators=100)),
+        #     'key': 'OneVsRestClassifier(RandomForestClassifier())' 
+        # }, 
   
     ]
             
@@ -83,7 +83,7 @@ if __name__=='__main__':
         # CUSTOM_FOLD_AVERAGE.Custom(classifier.get('classifier'), classifier.get('key'), X, y, columns, 10, counts)
         # CUSTOM_FOLD.Custom(classifier.get('classifier'), classifier.get('key'), X, y, columns, 10, counts)
     
-    # CNN_SPLIT.CNN(X, y, columns, 0.3, counts, 2)
+    CNN_SPLIT.CNN(X, y, columns, 0.3, counts, 1)
     # CNN_FOLD_AVERAGE.CNN(X, y, columns, 0.3, 10, counts, 1)
     # CNN_FOLD.CNN(X, y, columns, 0.3, 10, counts, 1)
     
